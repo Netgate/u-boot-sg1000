@@ -1,0 +1,14 @@
+U-Boot loader for the Netgate SG-1000.
+
+This version is patched so that:
+ * ELF and API features are enabled.
+ * The default environment is trimmed to just what's needed to boot.
+ * The DTB file name is chosen based on the board model and passed to ubldr
+   using the fdtfile env variable.  ubldr loads the DTB from /boot/dtb/ on
+   the FreeBSD partition.
+ * By default, it loads ubldr from file ubldr.bin at offset 0xe0000 on SPI flash
+   to address 0x88000000 and launches it.
+
+For information about the SG-1000, see https://www.netgate.com
+
+For general information about U-Boot see WWW: http://www.denx.de/wiki/U-Boot
